@@ -4,6 +4,10 @@
 
 source shared.sh
 
+# Sanitize PATH: remove entries with spaces (Windows paths from WSL) which
+# cause Buildroot's dependency checker to fail.
+export PATH=$(echo "$PATH" | tr ':' '\n' | grep -v ' ' | tr '\n' ':' | sed 's/:$//')
+
 EXTERNAL_REL_BUILDROOT=../base_external
 git submodule init
 git submodule sync
