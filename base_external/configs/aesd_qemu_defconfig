@@ -1,5 +1,5 @@
 BR2_aarch64=y
-BR2_JLEVEL=0
+BR2_JLEVEL=1
 BR2_DL_DIR="${HOME}/.dl"
 BR2_CCACHE=y
 BR2_CCACHE_DIR="${HOME}/.buildroot-ccache"
